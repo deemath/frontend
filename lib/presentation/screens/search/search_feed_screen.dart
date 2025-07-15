@@ -36,12 +36,22 @@ class _SearchFeedScreenState extends State<SearchFeedScreen> {
   String? _error;
 
   void _onSearchSubmitted(String query) async {
+    if (query.trim().isEmpty) {
+      setState(() {
+        _hasSearched = false;
+        _query = '';
+        _searchResults.clear();
+      });
+      return;
+    }
+
     setState(() {
       _query = query;
-      _hasSearched = query.trim().isNotEmpty;
+      _hasSearched = true;
       _isLoading = true;
       _error = null;
     });
+
     try {
       final results = await _searchService.search(query);
       setState(() {
@@ -116,6 +126,7 @@ class _SearchFeedScreenState extends State<SearchFeedScreen> {
   @override
   Widget build(BuildContext context) {
     final showResults = _hasSearched && _query.isNotEmpty;
+
     return Scaffold(
       appBar: AppBar(
         title: InstagramSearchBar(
