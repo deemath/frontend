@@ -1,0 +1,69 @@
+'All',
+    'People',
+    'Fanbases',
+    'Posts',
+    'Profiles',
+    'Song Posts',
+  ];
+=======
+  final List<String> _segments = [
+    'All',
+    'People',
+    'Fanbases',
+    'Song Posts',
+    'Posts',
+    'Profiles',
+  ];
+```
+
+```
+<<<<<<< SEARCH
+                                      if (_selectedSegment == 2)
+                                        _buildSection(
+                                            'Fanbases',
+                                            _searchResults['fanbases'] ?? [],
+                                            'name',
+                                            'description'),
+                                      if (_selectedSegment == 3)
+                                        _buildSection(
+                                            'Posts',
+                                            _searchResults['posts'] ?? [],
+                                            'songTitle',
+                                            'artistName'),
+                                      if (_selectedSegment == 4)
+                                        _buildSection(
+                                            'Profiles',
+                                            _searchResults['profiles'] ?? [],
+                                            'username',
+                                            'bio'),
+                                      if (_selectedSegment == 5)
+                                        _buildSection(
+                                            'Song Posts',
+                                            _searchResults['songPosts'] ?? [],
+                                            'songName',
+                                            'artists'),
+=======
+                                      if (_selectedSegment == 2)
+                                        _buildSection(
+                                            'Fanbases',
+                                            _searchResults['fanbases'] ?? [],
+                                            'name',
+                                            'description'),
+                                      if (_selectedSegment == 3)
+                                        _buildSection(
+                                            'Song Posts',
+                                            _searchResults['songPosts'] ?? [],
+                                            'songName',
+                                            'artists'),
+                                      if (_selectedSegment == 4)
+                                        _buildSection(
+                                            'Posts',
+                                            _searchResults['posts'] ?? [],
+                                            'songTitle',
+                                            'artistName'),
+                                      if (_selectedSegment == 5)
+                                        _buildSection(
+                                            'Profiles',
+                                            _searchResults['profiles'] ?? [],
+                                            'username',
+                                            'bio'),
